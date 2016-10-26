@@ -39,5 +39,14 @@ public class MainActivity extends AppCompatActivity {
             chooser = Intent.createChooser(intent,"Send Email");
             startActivity(chooser);
         }
+        if (view.getId()== R.id.sendImage){
+            Uri image = Uri.parse("android.resources://com.aryaan.ankitha/drawable"+R.drawable.ic_image);
+            intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("image/*");
+            intent.putExtra(Intent.EXTRA_STREAM,image);
+            intent.putExtra(Intent.EXTRA_TEXT,"Hey I am sending One image");
+            chooser = Intent.createChooser(intent,"Send Image");
+            startActivity(chooser);
+        }
     }
 }
